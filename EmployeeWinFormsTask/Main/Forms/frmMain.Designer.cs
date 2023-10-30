@@ -29,12 +29,14 @@ namespace EmployeeWinFormsTask
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tlsEmployeeMainForm = new System.Windows.Forms.ToolStrip();
             this.btnAddEmployee = new System.Windows.Forms.ToolStripButton();
             this.btnEditEmployee = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteEmployee = new System.Windows.Forms.ToolStripButton();
             this.gcEmployee = new DevExpress.XtraGrid.GridControl();
+            this.frmMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvEmployee = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,52 +46,57 @@ namespace EmployeeWinFormsTask
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonalID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.toolStrip1.SuspendLayout();
+            this.tlsEmployeeMainForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEmployee)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // tlsEmployeeMainForm
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsEmployeeMainForm.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.tlsEmployeeMainForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddEmployee,
             this.btnEditEmployee,
             this.btnDeleteEmployee});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(755, 39);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.tlsEmployeeMainForm.Location = new System.Drawing.Point(0, 0);
+            this.tlsEmployeeMainForm.Name = "tlsEmployeeMainForm";
+            this.tlsEmployeeMainForm.Size = new System.Drawing.Size(755, 39);
+            this.tlsEmployeeMainForm.TabIndex = 0;
+            this.tlsEmployeeMainForm.Text = "tlsEmployeeMainForm";
             // 
             // btnAddEmployee
             // 
+            this.btnAddEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
             this.btnAddEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(101, 36);
+            this.btnAddEmployee.Size = new System.Drawing.Size(105, 36);
             this.btnAddEmployee.Text = "დამატება";
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnEditEmployee
             // 
+            this.btnEditEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEditEmployee.Image")));
             this.btnEditEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditEmployee.Name = "btnEditEmployee";
-            this.btnEditEmployee.Size = new System.Drawing.Size(125, 36);
+            this.btnEditEmployee.Size = new System.Drawing.Size(134, 36);
             this.btnEditEmployee.Text = "რედაქტირება";
             this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
             // 
             // btnDeleteEmployee
             // 
+            this.btnDeleteEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteEmployee.Image")));
             this.btnDeleteEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
-            this.btnDeleteEmployee.Size = new System.Drawing.Size(84, 36);
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(87, 36);
             this.btnDeleteEmployee.Text = "წაშლა";
             // 
             // gcEmployee
             // 
+            this.gcEmployee.DataSource = this.frmMainBindingSource;
             this.gcEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcEmployee.Location = new System.Drawing.Point(0, 39);
             this.gcEmployee.MainView = this.gvEmployee;
@@ -99,6 +106,10 @@ namespace EmployeeWinFormsTask
             this.gcEmployee.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEmployee});
             this.gcEmployee.Click += new System.EventHandler(this.gcEmployee_Click);
+            // 
+            // frmMainBindingSource
+            // 
+            this.frmMainBindingSource.DataSource = typeof(EmployeeWinFormsTask.frmMain);
             // 
             // gvEmployee
             // 
@@ -121,7 +132,7 @@ namespace EmployeeWinFormsTask
             this.colID.Name = "colID";
             this.colID.Visible = true;
             this.colID.VisibleIndex = 0;
-            this.colID.Width = 49;
+            this.colID.Width = 42;
             // 
             // colFullName
             // 
@@ -130,7 +141,7 @@ namespace EmployeeWinFormsTask
             this.colFullName.Name = "colFullName";
             this.colFullName.Visible = true;
             this.colFullName.VisibleIndex = 1;
-            this.colFullName.Width = 212;
+            this.colFullName.Width = 201;
             // 
             // colDob
             // 
@@ -139,7 +150,7 @@ namespace EmployeeWinFormsTask
             this.colDob.Name = "colDob";
             this.colDob.Visible = true;
             this.colDob.VisibleIndex = 2;
-            this.colDob.Width = 130;
+            this.colDob.Width = 136;
             // 
             // colGenderID
             // 
@@ -148,7 +159,7 @@ namespace EmployeeWinFormsTask
             this.colGenderID.Name = "colGenderID";
             this.colGenderID.Visible = true;
             this.colGenderID.VisibleIndex = 3;
-            this.colGenderID.Width = 114;
+            this.colGenderID.Width = 67;
             // 
             // colPhone
             // 
@@ -157,7 +168,7 @@ namespace EmployeeWinFormsTask
             this.colPhone.Name = "colPhone";
             this.colPhone.Visible = true;
             this.colPhone.VisibleIndex = 4;
-            this.colPhone.Width = 104;
+            this.colPhone.Width = 83;
             // 
             // colAddress
             // 
@@ -166,7 +177,7 @@ namespace EmployeeWinFormsTask
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 5;
-            this.colAddress.Width = 66;
+            this.colAddress.Width = 51;
             // 
             // colPersonalID
             // 
@@ -175,7 +186,7 @@ namespace EmployeeWinFormsTask
             this.colPersonalID.Name = "colPersonalID";
             this.colPersonalID.Visible = true;
             this.colPersonalID.VisibleIndex = 6;
-            this.colPersonalID.Width = 87;
+            this.colPersonalID.Width = 68;
             // 
             // colEmail
             // 
@@ -184,7 +195,7 @@ namespace EmployeeWinFormsTask
             this.colEmail.Name = "colEmail";
             this.colEmail.Visible = true;
             this.colEmail.VisibleIndex = 7;
-            this.colEmail.Width = 88;
+            this.colEmail.Width = 82;
             // 
             // frmMain
             // 
@@ -192,16 +203,17 @@ namespace EmployeeWinFormsTask
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 428);
             this.Controls.Add(this.gcEmployee);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tlsEmployeeMainForm);
             this.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tlsEmployeeMainForm.ResumeLayout(false);
+            this.tlsEmployeeMainForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,7 +222,7 @@ namespace EmployeeWinFormsTask
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip tlsEmployeeMainForm;
         private System.Windows.Forms.ToolStripButton btnAddEmployee;
         private DevExpress.XtraGrid.GridControl gcEmployee;
         private DevExpress.XtraGrid.Views.Grid.GridView gvEmployee;
@@ -224,5 +236,6 @@ namespace EmployeeWinFormsTask
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonalID;
         private DevExpress.XtraGrid.Columns.GridColumn colEmail;
+        private System.Windows.Forms.BindingSource frmMainBindingSource;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeWinFormsTask.Emploeyee.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,20 +25,22 @@ namespace EmployeeWinFormsTask
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            
+            frmEmployeeAddEdit frmEmployeeAddEdit = new frmEmployeeAddEdit();
+
+            DialogResult result = frmEmployeeAddEdit.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                //RefreshfrmMain();
+            }
         }
 
         private void btnEditEmployee_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void gcEmployee_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
 
         }
