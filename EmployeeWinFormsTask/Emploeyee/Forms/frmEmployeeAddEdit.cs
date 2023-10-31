@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using EmployeeWinFormsTask.Database;
+using EmployeeWinFormsTask.Emploeyee.Hendler;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using EmployeeWinFormsTask.Database;
+using System.Windows.Forms;
 
 namespace EmployeeWinFormsTask.Emploeyee.Forms
 {
@@ -18,24 +14,20 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
         public frmEmployeeAddEdit()
         {
             InitializeComponent();
-            cbEmployeeGender.Items.AddRange(new string[] { "მამრობითი", "მდედრობითი" });
         }
-
-        private readonly SqlConnection connection;
-        private readonly string ConnectionString;
 
         private void btnSaveEmployee_Click(object sender, EventArgs e)
         {
 
             string employeeFullName = txtEmployeeFullName.Text.Trim();
             DateTime employeeDob = dtpickerEmployeeDob.Value;
-            string employeeGender = cbEmployeeGender.SelectedItem?.ToString();
+           // string employeeGender = cbEmployeeGender.SelectedItem?.ToString();
             string employeePhone = txtEmployeePhone.Text.Trim();
             string employeeAddress = txtEmployeeAddress.Text.Trim();
             string employeeEmail = txtEmployeeEmail.Text.Trim();
             string employeePersonalID = txtEmployeePersonalID.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(employeeFullName) || employeeDob == DateTime.MinValue || string.IsNullOrWhiteSpace(employeeGender))
+            if (string.IsNullOrWhiteSpace(employeeFullName) || employeeDob == DateTime.MinValue)
             {
                 MessageBox.Show("გთცოვთ შეავსოთ ყველა სავალდებულო ველი (გვარი სახელი, დაბადების თარიღი, სქესი).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -77,40 +69,36 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
                 return;
             }
 
-            int genederID = GetGenderByName(employeeGender);
 
-            MessageBox.Show(employeeAddress);
+                using (SqlCommand command = new SqlCommand("dbo.Employee_Set", DatabaseAccess.Connect()))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@FullName", txtEmployeeFullName.Text);
+                    command.Parameters.AddWithValue("@Dob", dtpickerEmployeeDob.Value);
+                    command.Parameters.AddWithValue("@GenderID", cbEmployeeGender.SelectedValue);
+                    command.Parameters.AddWithValue("@Phone", txtEmployeePhone.Text);
+                    command.Parameters.AddWithValue("@Address", txtEmployeeAddress.Text);
+                    command.Parameters.AddWithValue("@Email", txtEmployeeEmail.Text);
+                    command.Parameters.AddWithValue("@PersonalID", txtEmployeePersonalID.Text);
+                command.Connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                command.Connection.Close();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("დასაქემებულის ინფორმაცია წარმატებით განხორცილედა!", "Save Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("შეცდომა დაფიქსირდა პაციენტის ინფორმაციის დამახსოვრებისას", "Save Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
 
         }
 
         private void btnCencelEmployee_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
-        }
-
-        private int GetGenderByName(string genderName)
-        {
-            using (SqlDataAdapter command = new SqlDataAdapter("dbo.GetGenders", DatabaseAccess.Connect))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@GenderName", genderName);
-
-                SqlParameter returnParam = new SqlParameter("GenderID", SqlDbType.Int);
-                returnParam.Direction = ParameterDirection.Output;
-                command.Parameters.Add(returnParam);
-
-                command.ExecuteNonQuery();
-                int GenderID = (int)returnParam.Value;
-
-                if (GenderID > 0)
-                {
-                    return GenderID;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
         }
 
         private bool ValidatePersonalID(string employeePersonalID)
@@ -146,44 +134,16 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
                 }
             }
             return true;
+        }
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
+        private void frmEmployeeAddEdit_Load(object sender, EventArgs e)
+        {
+            ComboHendlers.GetGender(cbEmployeeGender);
+        }
 
-                using (SqlCommand command = new SqlCommand("frmEmployee", DatabaseAccess.Connect()))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
+        private void cbEmployeeGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-                    command.Parameters.AddWithValue("@FullName", txtEmployeeFullName);
-                    command.Parameters.AddWithValue("@Dob", dtpickerEmployeeDob);
-                    command.Parameters.AddWithValue("@GenderID", cbEmployeeGender);
-                    command.Parameters.AddWithValue("@Phone", txtEmployeePhone);
-                    command.Parameters.AddWithValue("@Address", txtEmployeeAddress);
-                    command.Parameters.AddWithValue("@Email", txtEmployeeEmail);
-                    command.Parameters.AddWithValue("@PersonalID", txtEmployeePersonalID);
-
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("დასაქემებულის ინფორმაცია წარმატებით განხორცილედა!", "Save Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DialogResult = DialogResult.OK;
-                    }
-                    else
-                    {
-                        MessageBox.Show("შეცდომა დაფიქსირდა პაციენტის ინფორმაციის დამახსოვრებისას", "Save Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            this.FormClosed += (s, args) =>
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                    connection.Dispose();
-                }
-            };
         }
     }
 }

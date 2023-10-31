@@ -51,6 +51,8 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
             this.dtpickerEmployeeDob = new System.Windows.Forms.DateTimePicker();
             this.databaseAccessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.frmMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSaveEmployeets = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tlsEmployeeAddEditForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.databaseAccessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).BeginInit();
@@ -69,27 +71,27 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
             this.tlsEmployeeAddEditForm.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.tlsEmployeeAddEditForm.Location = new System.Drawing.Point(0, 0);
             this.tlsEmployeeAddEditForm.Name = "tlsEmployeeAddEditForm";
-            this.tlsEmployeeAddEditForm.Size = new System.Drawing.Size(593, 39);
+            this.tlsEmployeeAddEditForm.Size = new System.Drawing.Size(676, 39);
             this.tlsEmployeeAddEditForm.TabIndex = 0;
             this.tlsEmployeeAddEditForm.Text = "tlsEmployeeAddEditForm";
             // 
             // btnSaveEmployee
             // 
-            this.btnSaveEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveEmployee.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveEmployee.Image")));
             this.btnSaveEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSaveEmployee.Name = "btnSaveEmployee";
-            this.btnSaveEmployee.Size = new System.Drawing.Size(94, 36);
+            this.btnSaveEmployee.Size = new System.Drawing.Size(91, 36);
             this.btnSaveEmployee.Text = "შენახვა";
             this.btnSaveEmployee.Click += new System.EventHandler(this.btnSaveEmployee_Click);
             // 
             // btnCencelEmployee
             // 
-            this.btnCencelEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCencelEmployee.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCencelEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnCencelEmployee.Image")));
             this.btnCencelEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCencelEmployee.Name = "btnCencelEmployee";
-            this.btnCencelEmployee.Size = new System.Drawing.Size(104, 36);
+            this.btnCencelEmployee.Size = new System.Drawing.Size(100, 36);
             this.btnCencelEmployee.Text = "გაუქმება";
             this.btnCencelEmployee.Click += new System.EventHandler(this.btnCencelEmployee_Click);
             // 
@@ -142,74 +144,75 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
             this.cbEmployeeGender.Name = "cbEmployeeGender";
             this.cbEmployeeGender.Size = new System.Drawing.Size(233, 26);
             this.cbEmployeeGender.TabIndex = 3;
+            this.cbEmployeeGender.SelectedIndexChanged += new System.EventHandler(this.cbEmployeeGender_SelectedIndexChanged);
             // 
             // lblEmployeeFullName
             // 
             this.lblEmployeeFullName.AutoSize = true;
-            this.lblEmployeeFullName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeFullName.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeFullName.Location = new System.Drawing.Point(79, 90);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
-            this.lblEmployeeFullName.Size = new System.Drawing.Size(122, 17);
+            this.lblEmployeeFullName.Size = new System.Drawing.Size(113, 18);
             this.lblEmployeeFullName.TabIndex = 8;
             this.lblEmployeeFullName.Text = "გვარი და სახელი";
             // 
             // lblEmployeeDob
             // 
             this.lblEmployeeDob.AutoSize = true;
-            this.lblEmployeeDob.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeDob.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeDob.Location = new System.Drawing.Point(79, 143);
             this.lblEmployeeDob.Name = "lblEmployeeDob";
-            this.lblEmployeeDob.Size = new System.Drawing.Size(138, 17);
+            this.lblEmployeeDob.Size = new System.Drawing.Size(129, 18);
             this.lblEmployeeDob.TabIndex = 9;
             this.lblEmployeeDob.Text = "დაბადების თარიღი";
             // 
             // lblEmployeeGender
             // 
             this.lblEmployeeGender.AutoSize = true;
-            this.lblEmployeeGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeGender.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeGender.Location = new System.Drawing.Point(79, 201);
             this.lblEmployeeGender.Name = "lblEmployeeGender";
-            this.lblEmployeeGender.Size = new System.Drawing.Size(44, 17);
+            this.lblEmployeeGender.Size = new System.Drawing.Size(42, 18);
             this.lblEmployeeGender.TabIndex = 10;
             this.lblEmployeeGender.Text = "სქესი";
             // 
             // lblEmployeePhone
             // 
             this.lblEmployeePhone.AutoSize = true;
-            this.lblEmployeePhone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeePhone.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeePhone.Location = new System.Drawing.Point(79, 252);
             this.lblEmployeePhone.Name = "lblEmployeePhone";
-            this.lblEmployeePhone.Size = new System.Drawing.Size(142, 17);
+            this.lblEmployeePhone.Size = new System.Drawing.Size(132, 18);
             this.lblEmployeePhone.TabIndex = 11;
             this.lblEmployeePhone.Text = "ტელეფონის ნომერი";
             // 
             // lblEmployeeAddress
             // 
             this.lblEmployeeAddress.AutoSize = true;
-            this.lblEmployeeAddress.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeAddress.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeAddress.Location = new System.Drawing.Point(79, 299);
             this.lblEmployeeAddress.Name = "lblEmployeeAddress";
-            this.lblEmployeeAddress.Size = new System.Drawing.Size(79, 17);
+            this.lblEmployeeAddress.Size = new System.Drawing.Size(75, 18);
             this.lblEmployeeAddress.TabIndex = 12;
             this.lblEmployeeAddress.Text = "მისამართი";
             // 
             // lblEmployeeEmail
             // 
             this.lblEmployeeEmail.AutoSize = true;
-            this.lblEmployeeEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeEmail.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeEmail.Location = new System.Drawing.Point(79, 352);
             this.lblEmployeeEmail.Name = "lblEmployeeEmail";
-            this.lblEmployeeEmail.Size = new System.Drawing.Size(60, 17);
+            this.lblEmployeeEmail.Size = new System.Drawing.Size(55, 18);
             this.lblEmployeeEmail.TabIndex = 13;
             this.lblEmployeeEmail.Text = "იმეილი";
             // 
             // lblEmployeePersonalID
             // 
             this.lblEmployeePersonalID.AutoSize = true;
-            this.lblEmployeePersonalID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeePersonalID.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeePersonalID.Location = new System.Drawing.Point(79, 406);
             this.lblEmployeePersonalID.Name = "lblEmployeePersonalID";
-            this.lblEmployeePersonalID.Size = new System.Drawing.Size(111, 17);
+            this.lblEmployeePersonalID.Size = new System.Drawing.Size(103, 18);
             this.lblEmployeePersonalID.TabIndex = 14;
             this.lblEmployeePersonalID.Text = "პირადი ნომერი";
             // 
@@ -231,11 +234,37 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
             // 
             this.frmMainBindingSource.DataSource = typeof(EmployeeWinFormsTask.frmMain);
             // 
+            // btnSaveEmployeets
+            // 
+            this.btnSaveEmployeets.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveEmployeets.Image")));
+            this.btnSaveEmployeets.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveEmployeets.Location = new System.Drawing.Point(188, 461);
+            this.btnSaveEmployeets.Name = "btnSaveEmployeets";
+            this.btnSaveEmployeets.Size = new System.Drawing.Size(103, 41);
+            this.btnSaveEmployeets.TabIndex = 15;
+            this.btnSaveEmployeets.Text = "შენახვა";
+            this.btnSaveEmployeets.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveEmployeets.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(318, 461);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 41);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "გაუქმება";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmEmployeeAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 536);
+            this.ClientSize = new System.Drawing.Size(676, 536);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSaveEmployeets);
             this.Controls.Add(this.dtpickerEmployeeDob);
             this.Controls.Add(this.lblEmployeePersonalID);
             this.Controls.Add(this.lblEmployeeEmail);
@@ -254,7 +283,9 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
             this.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEmployeeAddEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmployeeAddEdit";
+            this.Load += new System.EventHandler(this.frmEmployeeAddEdit_Load);
             this.tlsEmployeeAddEditForm.ResumeLayout(false);
             this.tlsEmployeeAddEditForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.databaseAccessBindingSource)).EndInit();
@@ -286,5 +317,7 @@ namespace EmployeeWinFormsTask.Emploeyee.Forms
         private System.Windows.Forms.Label lblEmployeeEmail;
         private System.Windows.Forms.Label lblEmployeePersonalID;
         private System.Windows.Forms.DateTimePicker dtpickerEmployeeDob;
+        private System.Windows.Forms.Button btnSaveEmployeets;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -137,7 +137,7 @@ namespace EmployeeWinFormsTask
             // colFullName
             // 
             this.colFullName.Caption = "დასაქმებულის სახელი და გვარი";
-            this.colFullName.FieldName = "Fullname";
+            this.colFullName.FieldName = "FullName";
             this.colFullName.Name = "colFullName";
             this.colFullName.Visible = true;
             this.colFullName.VisibleIndex = 1;

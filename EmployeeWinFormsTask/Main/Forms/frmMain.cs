@@ -1,4 +1,5 @@
 ﻿using EmployeeWinFormsTask.Emploeyee.Forms;
+using EmployeeWinFormsTask.Main.Hendler;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace EmployeeWinFormsTask
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-           // gcEmployee.DataSource = 
+            gcEmployee.DataSource = EmployeeHendler.GetEmployeeList();
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace EmployeeWinFormsTask
 
             if (result == DialogResult.OK)
             {
-                //RefreshfrmMain();
+                gcEmployee.DataSource = EmployeeHendler.GetEmployeeList();
             }
         }
 

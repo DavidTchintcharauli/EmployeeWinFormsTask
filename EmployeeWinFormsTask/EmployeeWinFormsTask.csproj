@@ -73,12 +73,14 @@
     <Compile Include="Emploeyee\Forms\frmEmployeeAddEdit.Designer.cs">
       <DependentUpon>frmEmployeeAddEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emploeyee\Hendler\ComboHendlers.cs" />
     <Compile Include="Main\Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Hendler\EmployeeHendler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Emploeyee\Forms\frmEmployeeAddEdit.resx">
@@ -124,9 +126,7 @@
     <Content Include="Resources\icons\v4services.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Emploeyee\Hendler\" />
     <Folder Include="Emploeyee\Model\" />
-    <Folder Include="Main\Hendler\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

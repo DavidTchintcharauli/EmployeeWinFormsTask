@@ -154,7 +154,30 @@
   <metadata name="frmMainBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>233, 17</value>
   </metadata>
+  <data name="btnSaveEmployeets.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAA30lEQVRYR+2WwQ2CQBBFtwRK
+        8OrNEiyBxAYowYt3OrAESrAESrAUStA/MMqy/mhInElI5ifvwM5k/w+ZDKRNan85VeAKeqXWko9g2IFH
+        gV8IYi50WrYXMRd6LduLmEeACBAB/hsAlx1/wALcAevNOajFUijIbmfr1YIBNGo9CQdt1uDF/DbwIF80
+        1mRJq/ZjgFtR9OCs9u+hY01WyMBWaj8JBxIi/8n4BrtUhov15sigN2Bpvla4gAWITRgBIkAEcA0gq7QM
+        MO92a8GsBrJ6X+afu91aMNyB8U9Hj7aolJ7vQ17kQFMHdQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABgUlEQVRYR+2X0W3DMAxENUJG
+        6AgZoSN0hI6QEbpBR8h/fzpCRukIGaF9h5CoLMsWJQvoTw84JKaOvIMhO1H6R46PlE7wYjxZeQqYd4Zv
+        8NlKS5jgDr+N+l4Xd4I512yueLWlX1D8LETOV5MMgf7S3Hk2yQMUboUg51AI+rbMxYvJHqCwJxa7QqBv
+        zVvdAW3AfA/UGAqBrmX+btIlWCg3Yo27IVhvma83YA4EwyGoHzN3IOwOwfUccwcN4RB8zjV30BgJsff4
+        imPmDgZEQmzxmLmDQSMh5pg7GNgTYq65g8EKUTPMeTP5fDC8tdudoTdmFxgaNXfOC8GwXnPn8RAMGTV3
+        joegufmGg5Gnoz8ETU1zk0o7NwTisLmD2pwQiLrNHawdC8HisLkDTSuE1pZ/xwSKOgvUGpzh1yvaSIjl
+        uYPC3s9q2NxBTyvE8sxBYStAt7mD3r0QqwAvhUAcNncwQyG+spmirtdHP4oKoROSNuOUY5kgM6hzoe6y
+        Zj/Z0l8jpR/wrrVpHs5j+gAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>41</value>
+    <value>25</value>
   </metadata>
 </root>
